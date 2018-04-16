@@ -1,0 +1,143 @@
+//Integer Class
+import java.util.Scanner;
+public class integer{
+     public static void main(String[] args) 
+     {
+     Scanner in = new Scanner(System.in);
+     System.out.print("Please Enter A Number: ");
+     int first = in.nextInt();
+     System.out.print("Please Enter Another Number: ");
+     int second = in.nextInt();
+     int sum = first + second;
+     int difference = first - second;
+     int product = first * second;
+     double average = (first + second) / 2;
+     int distance = Math.abs(difference);
+     int maximum = Math.max(first, second);
+     int minimum = Math.min(first, second);
+     System.out.println("Your first digit was: " + first);
+     System.out.println("Your second digit was: " + second);
+     System.out.println("Sum: " + sum);
+     System.out.println("Difference: " + difference);
+     System.out.println("Product: " + product);
+     System.out.println("Average: " + average);
+     System.out.println("Absolute Value: " + distance);
+     System.out.println("Maximum Value: " + maximum);
+     System.out.println("Minimum Value: " + minimum);
+     }
+
+    
+
+}
+
+//Circle Class
+import java.util.Scanner;
+public class circle
+{
+ public static void main (String[] args){
+     Scanner in = new Scanner(System.in);
+     System.out.println("Please Enter the Radius of a Circle: ");
+     double radius = in.nextInt();
+     double Area = Math.PI * Math.pow(radius, 2);
+     System.out.printf("The area is: %10.2f\n", Area);
+     Double Circumference = Math.PI * 2 * radius;
+     System.out.printf("The circumference is: %10.2f\n ", Circumference);
+     double Volume = (4.0/3.0) * Math.PI * Math.pow(radius, 3);
+     System.out.printf("The volume of the sphere is: %10.2f\n", Volume);
+     double surfaceArea = 4 * Math.PI * Math.pow(radius, 2);
+     System.out.printf("The surface area of the sphere is: %10.2f\n", surfaceArea);
+    }
+}
+
+//UserInput Class
+import java.util.Scanner;
+public class userInput
+{
+   public static void main (String [] args){
+      Scanner user = new Scanner(System.in);
+      System.out.println("Please enter an integer between 1,000 and 999,999: ");
+      String number = user.next();
+      String prefix = number.substring(0, number.length() -4);
+      String postfix = number.substring(number.length() - 3, number.length());
+      System.out.println(prefix + postfix);
+      
+    }
+}
+
+//SodaCan Class
+import java.util.Scanner;
+
+
+
+public class sodaCan
+
+{
+    private double height;
+    private double width;
+    
+ 
+public sodaCan (double height, double width)
+{
+   this.height = height;
+   this.width = width;
+   
+}
+public double getVoulme(){
+    return Math.PI * Math.pow(width/2.0, 2) * height;
+}
+
+public double getSurfaceArea(){
+    return (2 * Math.PI * width/2.0 * height) + (2 * Math.PI * Math.pow(width/2.0, 2));
+}
+}
+
+//SodaCan tester class
+import java.util.Scanner;
+public class sodaCanTester
+{
+   public static void main (String [] args) {
+     Scanner in = new Scanner(System.in);
+     System.out.println("Please put in a height of a can: ");
+     double height = in.nextDouble();
+     System.out.println("Please put in the diameter of a can: ");
+     double diameter = in.nextDouble();
+     sodaCan test = new sodaCan(height, diameter);
+     System.out.printf("Volume %10.2f\n: ",test.getVoulme());
+     System.out.printf("Surface %10.2f\n: ", test.getSurfaceArea());
+  
+     
+       
+    }
+}
+
+//givingChange class
+import java.util.Scanner;
+public class givingChange
+{
+    public static void main (String [] args){
+        Scanner coins = new Scanner(System.in);
+        int ad, ar;
+        System.out.print("Amount Due in Pennies: ");
+        ad = coins.nextInt();
+        System.out.print("Amount Recieved in Pennies: ");
+        ar = coins.nextInt();
+        int remaining = ar - ad;
+        
+        int dollars = remaining / 100;
+        remaining = remaining % 100;
+        int quarter = remaining / 25;
+        remaining = remaining % 25;
+        int dimes = remaining / 10;
+        remaining = remaining % 10;
+        int nickel = remaining / 5;
+        remaining = remaining % 5;
+        int pennies = remaining;
+        
+        System.out.println("Give the following change: ");
+        System.out.println("Dollars: " + dollars);
+        System.out.println("Quarters: " + quarter);
+        System.out.println("Dimes: " + dimes);
+        System.out.println("Nickels: " + nickel);
+        System.out.println("Pennies: " + pennies);
+    }
+}
