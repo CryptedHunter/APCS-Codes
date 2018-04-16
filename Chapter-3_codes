@@ -1,0 +1,272 @@
+//Codes for Chapter 3 In AP COMPUTER SCIENCE. THE BOOK TITLE IS IN THE DESCRIPTION. WEB BOOK ANSWERS COMING SOON!
+
+//Toggle Class
+public class toggle
+{
+   private int firstSwitchState;
+    private int secondSwitchState;
+    private int lampState;
+    
+    public toggle()
+    {
+        
+    }
+    
+    public void toggleFirstSwitch()
+    {
+        firstSwitchState = (firstSwitchState + 1) % 2;
+        lampState = (lampState + 1) % 2;
+    }
+    
+    public void toggleSecondSwitch()
+    {
+        secondSwitchState = (secondSwitchState + 1) % 2;
+        lampState = (lampState + 1) % 2;
+    }
+    
+    public int getFirstSwitchState()
+    {
+        return firstSwitchState;
+    }
+    
+    public int getSecondSwitchState()
+    {
+        return secondSwitchState;
+    }
+    
+    public int getLampState()
+    {
+        return lampState;         
+                  }
+   
+    }
+    
+    
+    //Toggle Class Tester
+    public class tester
+{
+    // instance variables - replace the example below with your own
+     
+    public static void main(String[]args){
+        toggle hallway = new toggle();
+        
+        int firstSwitch;
+        int secondSwitch;
+        int lampState;
+        
+        hallway.toggleFirstSwitch();
+        lampState = hallway.getLampState();
+        firstSwitch = hallway.getFirstSwitchState();
+        secondSwitch = hallway.getSecondSwitchState();
+        System.out.println("Toggle 1st Switch");
+        System.out.println("1st Switch State: " + firstSwitch);
+        System.out.println("2nd Switch State" + secondSwitch);
+        System.out.println("Lamp State: " + lampState);
+        
+        hallway.toggleSecondSwitch();
+        lampState = hallway.getLampState();
+        firstSwitch = hallway.getFirstSwitchState();
+        secondSwitch = hallway.getSecondSwitchState();
+        System.out.println("Toggle 2nd Switch");
+        System.out.println("1st Switch State: " + firstSwitch);
+        System.out.println("2nd Switch State" + secondSwitch);
+        System.out.println("Lamp State: " + lampState);
+        
+        hallway.toggleFirstSwitch();
+        lampState = hallway.getLampState();
+        firstSwitch = hallway.getFirstSwitchState();
+        secondSwitch = hallway.getSecondSwitchState();
+        System.out.println("Toggle 1st Switch");
+        System.out.println("1st Switch State: " + firstSwitch);
+        System.out.println("2nd Switch State" + secondSwitch);
+        System.out.println("Lamp State: " + lampState);
+        
+        hallway.toggleSecondSwitch();
+        lampState = hallway.getLampState();
+        firstSwitch = hallway.getFirstSwitchState();
+        secondSwitch = hallway.getSecondSwitchState();
+        System.out.println("Toggle 2nd Switch");
+        System.out.println("1st Switch State: " + firstSwitch);
+        System.out.println("2nd Switch State" + secondSwitch);
+        System.out.println("Lamp State: " + lampState);
+    }
+    }
+    
+    //Employee Class
+    class Employee {
+
+    private String name; 
+
+    private double salary; 
+   
+
+    public Employee(String employeeName, double currentSalary) {
+        this.name = employeeName;
+        this.salary = currentSalary;
+        
+    } 
+
+    public String getName() {
+        return name; 
+    }
+ 
+   public double getSalary() {
+        return salary; 
+    } 
+    
+    public void raiseSalary(double byPercent)
+{
+    this.salary = this.salary * byPercent + this.salary;
+    
+    
+    
+}
+}
+
+//Employee Tester Class
+public class employeeTester
+{
+    public static void main (String[] args)
+    
+    
+    {
+        Employee person = new Employee("Hacker, Harry", 50000);
+        person.raiseSalary(10);
+        System.out.println(person.getName() + " had 50000 dollars! He raised it to:" + person.getSalary());
+    }
+
+    
+    
+}
+
+
+//Bank Class
+public class bank
+{
+    public double balance;
+    
+    public bank()
+    {
+        balance = 0;    
+    }
+    public bank(double initialBalance)
+    {
+        balance = initialBalance;
+    }
+    public void deposit(double amount)
+    {
+        balance = balance + amount;
+    }
+    public void withdraw(double amount)
+    {
+        balance = balance - amount;
+    }
+    public double getBalance()
+    {
+        return balance;
+    }
+   
+}
+
+
+
+// Bank Tester
+public class bankTester
+{
+  public static void main (String[] args)
+  
+  {
+      bank momsSavings = new bank(1000);
+      momsSavings.withdraw(500);
+      System.out.println("We withdrew $500! The new balance for the account is " + momsSavings.balance);
+      momsSavings.withdraw(400);
+      System.out.println("We withdrew another $400! The new balance for the account is " + momsSavings.balance);
+    }
+}
+
+
+//Savings Account class
+public class SavingsAccount
+{
+    private double balance;
+    private double interest;
+    
+    public SavingsAccount()
+    {
+        balance = 0;    
+    }
+    public SavingsAccount(double initialBalance, double interezt)
+    {
+        balance = initialBalance;
+        interest = interezt/100;
+    }
+    public void deposit(double amount)
+    {
+        balance = balance + amount;
+    }
+    public void addInterest()
+    {
+        balance = balance + (balance * interest) ;
+    }
+    public void withdraw(double amount)
+    {
+        balance = balance - amount;
+    }
+    public double getBalance()
+    {
+        return balance;
+    }
+   
+}
+      
+    
+
+
+
+//Savings account tester
+public class savingsTester
+{
+    public static void main (String [] args){
+    SavingsAccount momsSavings = new SavingsAccount(1000, 10);
+    System.out.println("We started with: " + momsSavings.getBalance());
+    System.out.println("The interest rate is 10%");
+    momsSavings.addInterest();
+    System.out.println("The amount after one year is: " + momsSavings.getBalance());
+    }
+}
+
+//StudentGrades class
+public class studentGrades
+{
+private String name;
+    private int quizScore;
+    private int quizzesTaken;
+    
+    public studentGrades(String studentName){
+        name = studentName;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    
+    public int getTotalScore(){
+        return quizScore;
+    }
+    
+    
+    //Student Grades Tester
+    public class studentGradesTester
+{
+        public static void main (String [] args){
+        studentGrades person = new studentGrades("Billy");
+        System.out.println("Student Name: " + person.getName());
+        person.addQuiz(50);
+        person.addQuiz(90);
+        person.addQuiz(100);
+        System.out.println("Average Score: " + person.getAverageScore());
+        System.out.println("Number of Quizzes Taken: " + person.quizzesTaken());
+    }
+}
+
+
