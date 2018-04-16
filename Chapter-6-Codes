@@ -1,0 +1,183 @@
+//LoopProject
+import java.util.Scanner; 
+ 
+public class loopProject { 
+public static void main(String[] args) { 
+ double even_sum = 0; 
+ for (int boi = 0; boi < 101; boi += 2) { 
+     even_sum += boi; 
+ } 
+ System.out.println("Evens sum: " + even_sum); 
+  
+ double square_sum = 0; 
+ for (int x = 1; x*x <= 100; x++) { 
+     int a = x * x; 
+     square_sum += a;       
+ } 
+ System.out.println("Squares sum: " + square_sum); 
+  
+ double powers_sum = 0; 
+ for (int f = 0; f < 21; f++) { 
+     powers_sum = Math.pow(2, f); 
+      System.out.println("Powers of 2: " + powers_sum); 
+ } 
+
+  
+  
+ Scanner input = new Scanner(System.in); 
+ System.out.print("Int A: "); 
+ int a_range = input.nextInt(); 
+ System.out.print("Int b: "); 
+ int b_range = input.nextInt(); 
+ double odd_sum = 0; 
+ for (int a = a_range; a <= b_range; a++) { 
+     if (a % 2 != 0) { 
+      odd_sum += a; 
+     } 
+ } 
+ System.out.println("Odd numbers sum: " + odd_sum); 
+  
+ System.out.print("Number: "); 
+ int number = input.nextInt(); 
+ int odd_digits_sum = 0; 
+ while (number > 0) { 
+     int digit = number % 10; 
+     if (digit % 2 != 0) { 
+     odd_digits_sum += digit; }
+     number = number/10;
+     
+ } 
+ System.out.println("Sum of odd digits: "+ odd_digits_sum); 
+    } 
+}
+
+//Loop Values
+
+public class loopValues
+{
+    public static void main (String [] args)
+    {       
+        double sum = 0;
+        int count = 0;
+        double largest = 0;
+        double smallest = 0;
+        double range = 0;
+        double average = 0;
+         
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter values. Use X to finish.");
+        while (in.hasNextDouble())
+        {
+            double value = in.nextDouble();
+            {
+            
+                sum = sum + value;
+                if (count == 0)
+                {
+                    smallest = value;
+                    largest = value;
+                }
+                count++;
+                average = sum/count;
+                if (value > largest)
+                {
+                    largest = value;
+                }
+                if (value < smallest)
+                {
+                    smallest = value;
+                }
+                range = largest - smallest;
+}
+}
+ System.out.printf("The average is: %10.2f\n", average);
+ System.out.printf("The largest is: %10.2f\n", largest);
+ System.out.printf("The smallest is: %10.2f\n", smallest);
+ System.out.printf("The range is: %10.2f\n", range);
+}
+
+} 
+
+
+//Drunkard Walk
+import java.util.Random;
+public class drunkardWalk
+{
+    public static void main(String [] args){
+    int x = 0;
+    int y = 0;
+    System.out.println("Starting point (" + x +"," + y + ")");
+    int counter = 0;
+    while(counter <= 100)
+    {
+        Random rand = new Random();
+        int  n = rand.nextInt(4) + 1;
+        if (n == 1){
+        y = y + 1;
+        }
+        if (n == 2){
+        y = y - 1;
+        }
+         if (n == 3){
+        x = x + 1;
+        }
+        if (n == 4){
+        x = x - 1;
+        }
+    counter++;
+    
+    }
+    System.out.println("Ending point (" + x +"," + y + ")");
+  }
+}
+
+
+//FactorIntegers Class
+import java.util.Scanner; 
+public class factorIntegers
+{
+   public static void main(String [] args){
+    Scanner in = new Scanner(System.in);
+    
+    int input = in.nextInt();
+    for(int i = 1; i <= input; i++){
+        if (input % i == 0){
+            System.out.print(" " + i);
+        }
+    }
+}
+}
+
+//MovieTickets class
+import java.util.Scanner;
+public class movieTickets
+{
+    public static void main(String [] args){
+        Scanner in = new Scanner(System.in);
+        //int purchase = in.nextInt();
+        int tickets = 100;
+        int counter = 0;
+        while(tickets > 0)
+        {
+         System.out.println("Please enter ticket amount less than 4");
+         int purchase = in.nextInt();
+         
+          if (purchase <= 4)
+          {
+          
+          tickets = tickets - purchase;
+          System.out.println("Amount of Tickets left: " + tickets);
+          counter++;
+
+          }
+          else
+          {
+          System.out.println("Number has exceeded amount of ticket purchase allowed");
+          Scanner im = new Scanner(System.in);
+          purchase = in.nextInt();
+    }
+    
+  }
+  System.out.println("Amount of buyers: " + counter);
+}
+}
