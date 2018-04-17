@@ -1,0 +1,92 @@
+//Animal Interface
+public interface animal
+{
+    public String getSound();
+    public String getType();
+}
+
+//Pig Class
+public class Pig implements animal
+{
+    private String myType;
+    private String mySound;
+    public Pig(String type, String sound)
+    {
+        myType = type;
+        mySound = sound;
+    }
+    public String getSound() {return mySound;}
+    public String getType() {return myType;}
+}
+
+//Cow Class
+class Cow implements animal
+{
+    private String myType;
+    private String mySound;
+    private String myName;
+    public Cow(String type, String sound)
+    {
+        myType = type;
+        mySound = sound;
+    }
+    public String getSound() {return mySound;}
+    public String getType() {return myType;}
+}
+
+//Chick Class
+public class Chick implements animal
+{
+    private String myType;
+    private String mySound;
+    private String myName;
+    public Chick(String type, String sound)
+    {
+        myType = type;
+        mySound = sound;
+    }
+    public String getSound() {return mySound;}
+    public String getType() {return myType;}
+}
+
+
+//Farm Tester
+public class testFarm
+{
+    public static void main(String [] args)
+    {
+       Farm bob = new Farm();
+       bob.animalSounds();
+       
+}
+}
+
+//Farm Class
+public class Farm
+{
+    private animal[] a = new animal[3];
+    public Farm(){
+        a[0] = new namedCow("cow", "moo", "Esie");
+        a[1] = new Chick("chick", "cluck");
+        a[2] = new Pig("pig", "oink");
+    }
+    public void animalSounds()
+    {
+        for(int i=0; i<a.length; i++)
+        {
+            System.out.println( a[i].getType() + " goes " + a[i].getSound() );
+        }
+        System.out.print(((namedCow)a[0]).getName() + " is the name of cow");
+}
+}
+
+//Named cow class
+public class namedCow extends Cow 
+{
+    private String myName;
+    public namedCow(String type, String sound,String name){
+        super(type,sound);
+        myName = name;
+}
+public String getName(){ return myName;}
+}
